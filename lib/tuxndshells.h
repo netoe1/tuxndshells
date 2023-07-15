@@ -6,7 +6,7 @@
 #define LINE_LIMIT 1024
 #define CMD_LIMIT 100
 
-bool create_directory(char *name_of_dir)
+bool TUXLLS_create_directory(char *name_of_dir)
 {
     char command_line[CMD_LIMIT];
     bool result;
@@ -23,14 +23,14 @@ bool create_directory(char *name_of_dir)
     return false;
 }
 
-bool create_file(char *filename, char *ext, FILE *ptr_to_file)
+bool TUXLLS_create_file(char *filename, char *ext, FILE *ptr_to_file)
 {
     char allname[CMD_LIMIT];
     setbuf(stdin, NULL);
     setbuf(stdout, NULL);
     sprintf(allname, "%s%s", filename, ext);
 }
-void showDirectory(char *string)
+void TUXLLS_showDirectory(char *string)
 {
     const unsigned int BUFFER_SIZE = 1024;
     char command[BUFFER_SIZE];
@@ -51,7 +51,7 @@ void showDirectory(char *string)
     pclose(fp);
     strncpy(string, result, sizeof(string) - 1);
 }
-char *get_directory()
+char *TUXLLS_get_directory()
 {
     char aux_buf[LINE_LIMIT];
     system("pwd >> dir.tmp");
@@ -72,7 +72,7 @@ char *get_directory()
     }
 }
 
-FILE *vf_fileExists(char *file_w_ext)
+FILE *TUXLLS_vf_fileExists(char *file_w_ext)
 {
     FILE *tmp;
     char output[1024];
@@ -87,7 +87,7 @@ FILE *vf_fileExists(char *file_w_ext)
     return tmp;
 }
 
-char *TUX_readcntFILE()
+char *TUXLLS_readcntFILE()
 {
     FILE *fp;
     char buffer[1024];
@@ -107,4 +107,4 @@ char *TUX_readcntFILE()
         printf("%s", buffer);
     }
 }
-void *TUX_clear_READCNTFILE();
+void *TUXLLS_clear_READCNTFILE();
