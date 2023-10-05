@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
-#define LINE_LIMIT 1024
-#define CMD_LIMIT 100
-
+#include "../include/tuxlls.h"
 bool TUXLLS_mkdir(char *name_of_dir)
 {
     char command_line[CMD_LIMIT];
@@ -107,4 +104,3 @@ char *TUXLLS_readfile()
         printf("%s", buffer);
     }
 }
-
